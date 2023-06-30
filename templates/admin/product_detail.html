@@ -1,0 +1,18 @@
+{% extends 'admin/admin_base.html' %}
+
+{% block content %}
+ <a href="{% url 'product_update' product.id%}" type="button" class="btn btn-primary">Update</a>
+<a href="{% url 'product_delete' product.id %}" type="button" class="btn btn-primary">Delete</a>
+    <div class="container">
+        <div class="card my-6">
+            <div class="card-body">
+                <h5 class="card-title"> <b>Product Name      :</b>   {{ product.name }}</h5>
+                <p class="card-text"><b>Product Price  :</b> :${{ product.price }}</p>
+                <p class="card-text"><b>Product Description  :</b>   {{ product.description }}</p>
+                <p class="card-text"><b>Product Quanity      :</b>   {{ product.quantity }}</p>
+                <p class="card-text">Created: {{ product.created_date }}</p>
+                <img src="{{ product.image.url }}" alt="" class="img-fluid">
+            </div>
+        </div>
+    </div>
+{% endblock %}
